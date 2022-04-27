@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/custom/custom.css' %}">
+        {% block head %}
+        {% endblock %}
+      </head>
+    <body>
+
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                      <div class="collapse navbar-collapse">
+                        <div class="navbar-nav">
+                            <a class="nav-link" href="{% url 'newPerson' %}">Enter your data to base</a>
+                            {% if user.is_authenticated %}
+                              <a class="nav-link" href="{% url 'personList' %}">Person list</a>
+                            {% endif %}
+                        </div>
+                      </div>
+                      <div class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        {% else %}
+                          <a class="nav-link" href="{% url 'login' %}">Just for website admin.</a>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </nav>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

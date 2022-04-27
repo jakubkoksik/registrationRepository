@@ -1,0 +1,38 @@
+{% extends 'registrationApp/base.html' %}
+{% block content %}
+<div class="newPersonDiv">
+    <form class="row g-3" method="post"> {% csrf_token %}
+        <div class="col-12">
+            <label class="form-label">First name</label>
+            {{ form.firstName }}
+        </div>
+        <div class="col-12">
+            <label class="form-label">Last name</label>
+            {{ form.lastName }}
+        </div>
+        <div class="col-12">
+            <label class="form-label">Age</label>
+            {{ form.age }}
+        </div>
+        <div class="col-12">
+            <label class="form-label">Sex</label>
+            {{ form.sex }}
+        </div>
+        <div class="col-12">
+            <label class="form-label">Profession</label>
+            {{ form.profession }}
+        </div>
+        <div class="col-12">
+            <label class="form-label">Email</label>
+            {{ form.email }}
+        </div>
+        <div class="col-12">
+            <label class="form-label">Phone</label>
+            {{ form.phone }}
+        </div>
+        <div class="col-12">
+        <button type="submit" class="btn btn-primary">Confirm</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

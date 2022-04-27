@@ -1,0 +1,18 @@
+{% extends 'registrationApp/base.html' %}
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <h5 clas s="card-title">First name: {{ person.firstName }}</h5>
+            <h5 class="card-title">Last name: {{ person.lastName }}</h5>
+            <p class="card-text">Have work: {% if person.haveWork %}<b style="color: green;">{{ person.haveWork }}</b>{% else %}{{ person.haveWork }}{% endif %}</p>
+            <p class="card-text">Age: {{ person.age }}</p>
+            <p class="card-text">Sex: {{ person.sex }}</p>
+            <p class="card-text">Profession: {{ person.profession }}</p>
+            <p class="card-text">Phone: {{ person.phone }}</p>
+            <p class="card-text">Email: {{ person.email }}</p>
+            <p class="card-text">Created date: {{ person.createdDate }}</p>    
+            <a href="{% url 'deletePerson' pk=person.pk %}">Delete this person</a>
+            <a href="{% url 'changeWorkStatus' pk=person.pk %}">Change work status</a>
+        </div>
+    </div>
+{% endblock %}

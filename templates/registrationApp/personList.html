@@ -1,0 +1,15 @@
+{% extends 'registrationApp/base.html' %}
+{% block content %}
+    {% for person in people %}
+    <div class="card">
+    <div class="card-header">
+        <span><b>First name:</b> {{ person.firstName }}</span>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><b>Profession:</b> {{ person.profession }}</h5>
+        <p class="card-text"><b>Age:</b> {{ person.age }}</p>
+        <a href="{% url 'personDetail' pk=person.pk %}" class="btn btn-primary">Click for details</a>
+    </div>
+    </div>
+    {% endfor %}
+{% endblock %}
